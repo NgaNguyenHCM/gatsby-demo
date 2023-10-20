@@ -1,18 +1,18 @@
 import type { GatsbyConfig } from "gatsby";
 
-const config: GatsbyConfig = {
+const config: { graphqlTypegen: boolean; plugins: (string | {} | { resolve: string; options: { icon: string } } | { resolve: string; options: { path: string; name: string }; __key: string })[]; siteMetadata: { siteUrl: string; title: string } } = {
   siteMetadata: {
     title: `Iris Gatsby Demo`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://iris-gatsby-demo.netlify.app/`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-google-gtag", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
+  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.png"
+      "icon": "src/images/icon.png",
     }
   }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
